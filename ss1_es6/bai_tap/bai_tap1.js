@@ -59,5 +59,7 @@ let addedCourses = [
     }
 ];
 // 3.Sử dụng cú pháp ES6 đã học viết hàm trả về một mảng mới gộp 2 mảng courses và addedCourses
-let mergeArr = [...courses, ...addedCourses];
-console.log(mergeArr);
+let merge = (x, y) =>{
+    return [...x, ...y];
+};
+console.log(merge(courses,addedCourses));
