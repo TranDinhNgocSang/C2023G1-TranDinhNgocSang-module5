@@ -37,16 +37,16 @@ class App extends Component {
           onChange={this.handleChange}
         />
         <button onClick={this.handleAddItem}>ADD</button>
-        {this.state.list.map((todo, index) => (
-          <table key={index}>
-            <tbody>
+        <table key={index}>
+          <tbody>
+            {this.state.list.map((todo, index) => (
               <tr>
                 <td>{index + 1}:</td>
                 <td>{todo}</td>
               </tr>
-            </tbody>
-          </table>
-        ))}
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   }
