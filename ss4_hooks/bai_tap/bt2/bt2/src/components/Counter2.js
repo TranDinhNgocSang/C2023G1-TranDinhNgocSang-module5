@@ -1,7 +1,13 @@
-import React, {useSate} from "React";
+
+import useIncrement from "../hooks/useIncrement";
+
 function Counter2(){
-const [counter2,setCounter2] = useSate(0);
+    const [count,increase] = useIncrement();
 return(
-    <button onClick={()}></button>
+    <>
+    <p>Count: {count}</p>
+    <button onClick={()=>increase(2)}>Add1</button>
+    </>
 )
 }
+export default Counter2;

@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function useClock() {
     const [time, setTime] = useState("");
     const [ampm, setampm] = useState("");
+    const sang =1;
  
     // Function cập nhật thời gian.
     const updateTime = function () {
@@ -40,5 +41,5 @@ export default function useClock() {
         updateTime();
     }, 1000);
  
-    return [time, ampm]
+    return [time, ampm,sang]
 }

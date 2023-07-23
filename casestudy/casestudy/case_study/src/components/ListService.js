@@ -1,4 +1,4 @@
-function Content() {
+function ListService() {
   return (
     <main>
       <div className="slider-area ">
@@ -242,4 +242,4 @@ function Content() {
     </main>
   );
 }
-export default Content;
+export default ListService;
