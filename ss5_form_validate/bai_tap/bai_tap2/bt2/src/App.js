@@ -27,25 +27,25 @@ function App() {
           contact: [],
         }}
         validationSchema={Yup.object({
-          fullName: Yup.string().required("Không được để trống"),
-          idCart: Yup.string().required("Không được để trống"),
+          fullName: Yup.string().required("ten Không được để trống"),
+          idCart: Yup.string().required("so can cuoc Không được để trống"),
           yearBirth: Yup.number()
-            .required("Không được để trống")
+            .required("ngay sinh Không được để trống")
             .min(1900, "Năm sinh phải lớn hơn 1900"),
-          gender: Yup.boolean().required("khong duoc de trong"),
-          nationality: Yup.string().required("Không được để trống"),
+          gender: Yup.boolean().required("gioi tinh khong duoc de trong"),
+          nationality: Yup.string().required("quoc gia Không được để trống"),
           company: Yup.boolean(),
           jobPosition: Yup.string(),
           healthInsurance: Yup.string(),
-          province: Yup.string().required("Không được để trống"),
-          district: Yup.string().required("Không được để trống"),
-          wards: Yup.string().required("Không được để trống"),
-          address: Yup.string().required("Không được để trống"),
-          phone: Yup.string().required("Không được để trống"),
+          province: Yup.string().required("tinh/thanh Không được để trống"),
+          district: Yup.string().required("quan/huyen Không được để trống"),
+          wards: Yup.string().required("thi/xa Không được để trống"),
+          address: Yup.string().required("dia chi Không được để trống"),
+          phone: Yup.string().required("so dien thoai Không được để trống"),
           email: Yup.string()
-            .required("Không được để trống")
+            .required("Email Không được để trống")
             .email("Email không hợp lệ"),
-          trip: Yup.string().required("Không được để trống"),
+          trip: Yup.string().required("noi tung di Không được để trống"),
         })}
         onSubmit={(values) => {
           alert("thanh cong");

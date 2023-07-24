@@ -12,7 +12,7 @@ function ToDo() {
       setTodo(data);
     };
     getToDo();
-  },[]);
+  },[newToDo]);
 
   const handleInputChange = (e) => {
     setNewToDo(e.target.value);
@@ -23,15 +23,12 @@ function ToDo() {
       name: newToDo,
     });
     setNewToDo('');
-    const data = await getListToDo();
-    setTodo(data);
   };
 
   return (
     <>
       <h1>Todo List</h1>
       <input onChange={handleInputChange} value={newToDo} />
-      <p>{newToDo}</p>
       <button onClick={handleSubmit}>Submit</button>
       <ul>
         {todo.map((t) => (

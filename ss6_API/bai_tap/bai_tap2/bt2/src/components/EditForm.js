@@ -36,8 +36,8 @@ function EditForm() {
           quantity: book.quantity,
         }}
         validationSchema={yub.object({
-          title: yub.string().required("khong được để trống"),
-          quantity: yub.string().required("khong được để trống"),
+          title: yub.string().required("tieu de khong được để trống"),
+          quantity: yub.string().required("so luong khong được để trống"),
         })}
         onSubmit={(book)=>{
             console.log(book);

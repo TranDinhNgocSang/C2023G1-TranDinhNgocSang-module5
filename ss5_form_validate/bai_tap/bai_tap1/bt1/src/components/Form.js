@@ -14,13 +14,13 @@ function ContacForm() {
           message: "",
         }}
         validationSchema={Yup.object({
-          name: Yup.string().required("khong duoc de trong"),
-          email: Yup.string().required("khong duoc de trong").email(),
+          name: Yup.string().required("ten khong duoc de trong"),
+          email: Yup.string().required("email khong duoc de trong").email(),
           phone: Yup.string()
-            .required("khong duoc de trong")
-            .length(10, "phai du 10 so"),
+            .required("so dien thoai khong duoc de trong")
+            .length(10, "so dien thoai phai du 10 so"),
           message: Yup.string()
-            .required("khong duoc de trong")
+            .required("mess khong duoc de trong")
             .max(50, "mess khong duoc qua dai"),
         })}
         onSubmit={(value) => {
