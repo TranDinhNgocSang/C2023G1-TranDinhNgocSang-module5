@@ -9,7 +9,7 @@ import editBook from "../service/editBook";
 function EditForm() {
   const navigate = useNavigate();
   const {id} = useParams();
-  const [book,setBook] = useState({})
+  const [book,setBook] = useState()
       
   useEffect(() => {
     const fetchBookById = async () => {
@@ -20,8 +20,12 @@ function EditForm() {
     fetchBookById();
   }, []);
 
+  if(!book){
+    return null
+  }
+  
   return (
-    <>
+    <> 
       <h2>Edit a book</h2>
       <br />
       {console.log(book)}
