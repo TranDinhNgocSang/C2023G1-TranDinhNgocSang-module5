@@ -1,0 +1,28 @@
+{
+  "todoList": [
+    {
+      "id": 1,
+      "name": "go school"
+    },
+    {
+      "id": 2,
+      "name": "go home"
+    },
+    {
+      "id": 3,
+      "name": "go play"
+    },
+    {
+      "id": 4,
+      "name": "go sleep"
+    },
+    {
+      "name": "oke chưa",
+      "id": 5
+    },
+    {
+      "name": "oke",
+      "id": 6
+    }
+  ]
+}

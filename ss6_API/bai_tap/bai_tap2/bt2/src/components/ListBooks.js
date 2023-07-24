@@ -1,0 +1,63 @@
+import { useState, useEffect } from "react";
+import {Await, useNavigate} from "react-router-dom"
+import showListBooks from "../service/showListBooks";
+import deleteBook from "../service/deleteBook";
+function ListBooks() {
+const navigate = useNavigate();
+  const [books, setBooks] = useState([]);
+  const [flag,setFlag] = useState(false);
+
+  useEffect(() => {
+    const getBooks = async () => {
+      const data = await showListBooks();
+      setBooks(data);
+    };
+    getBooks();
+  },[flag]);
+
+const handelButtonAdd = ()=>{
+navigate("/add")
+}
+
+const handelButondelete = async(id)=>{
+await deleteBook(id);
+setFlag(!flag);
+navigate("/")
+}
+
+const handelButonEdit =(id)=>{
+  navigate("/edit/"+id)
+}
+
+  return(
+    <>
+    <h2>Library</h2>
+    <button onClick={handelButtonAdd}>Add new a book</button>
+    <table border={1} cellSpacing={0}>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            {books.map((b)=>{
+                return(
+                <tr key={b.id}>
+                    <td>{b.title}</td>
+                    <td>{b.quantity}</td>
+                    <td>
+                        <button onClick={()=>handelButonEdit(b.id)} >Edit</button>
+                        <button onClick={()=>handelButondelete(b.id)}>Delete</button>
+                    </td>
+                </tr>
+                )
+            })}
+        </tbody>
+    </table>
+    </>
+  )
+}
+
+export default ListBooks;
