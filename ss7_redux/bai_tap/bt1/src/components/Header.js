@@ -1,8 +1,12 @@
 import { useNavigate} from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux'
+import {getListUser} from "../redux/Action"
 function Header(){
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handelButtonGetUsers = ()=>{
+        dispatch(getListUser())
 navigate("/list");
     }
     return(

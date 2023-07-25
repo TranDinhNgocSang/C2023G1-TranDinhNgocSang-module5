@@ -7,6 +7,6 @@ export async function getUsers () {
     return res.data;
 }
 
-export async function deleteBook(id){
+export async function deleteUser(id){
     await axios.delete("/listUser/"+ id)
     };

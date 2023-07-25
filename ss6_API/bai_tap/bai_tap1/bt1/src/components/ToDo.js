@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import getListToDo from "../service/getListToDo";
-import addToDo from "../service/addToDo";
+import {getListToDo,addToDo} from "../service/todoserver"
 
 function ToDo() {
   const [todo, setTodo] = useState([]);
   const [newToDo, setNewToDo] = useState('');
 
+  const getToDo = async () => {
+    const data = await getListToDo();
+    setTodo(data);
+  };
+
   useEffect(() => {
-    const getToDo = async () => {
-      const data = await getListToDo();
-      setTodo(data);
-    };
     getToDo();
   },[newToDo]);
 

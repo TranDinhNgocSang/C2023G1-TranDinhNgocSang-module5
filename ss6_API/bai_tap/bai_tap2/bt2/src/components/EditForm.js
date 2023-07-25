@@ -2,23 +2,22 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Route, Routes, Link, useNavigate, useParams } from "react-router-dom";
 import * as yub from "yup";
 import { useEffect, useState } from "react";
-import showListBooks from "../service/showListBooks";
-import editBook from "../service/editBook";
+import {getBookById,editBook} from "../service/bookServer";
 
 
 function EditForm() {
   const navigate = useNavigate();
   const {id} = useParams();
   const [book,setBook] = useState()
+
+  const fetchBookById = async () => {
+    const getBook = await getBookById(id);
+    setBook(getBook);
+  };
       
   useEffect(() => {
-    const fetchBookById = async () => {
-      const data = await showListBooks();
-      const bookById = data.filter((b) => b.id === +id);
-      setBook(bookById[0]);
-    };
     fetchBookById();
-  }, []);
+  }, [id]);
 
   if(!book){
     return null

@@ -1,24 +1,18 @@
-import { getUsers, deleteBook } from "../server/userService";
+
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import {deleteUserById} from "../redux/Action";
 
 function ListUsers() {
-  const [user, setUser] = useState([]);
-  const [flag, setFlag] = useState(false);
+  
+  const listUser = useSelector( state => state.users)
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const getListUser = async () => {
-      const data = await getUsers();
-      setUser(data);
-    };
-    getListUser();
-  }, [flag]);
-
-  const handelButtonDeleteUser = async(id) => {
+  const handelButtonDeleteUser = (id) => {
     const confirm = window.confirm("ban co muon xoa");
     if(confirm){
-        await deleteBook(id);
-        await setFlag(!flag);
+        dispatch(deleteUserById(id));
         alert("xoa thanh cong")
     }
   };
@@ -36,7 +30,7 @@ function ListUsers() {
           </tr>
         </thead>
         <tbody>
-          {user.map((us) => {
+          {listUser.map((us) => {
             return (
               <tr key={us.id}>
                 <td>{us.id}</td>

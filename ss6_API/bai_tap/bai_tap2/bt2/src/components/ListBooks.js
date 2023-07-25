@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { useNavigate} from "react-router-dom"
-import showListBooks from "../service/showListBooks";
-import deleteBook from "../service/deleteBook";
+import {showListBooks,deleteBook} from "../service/bookServer";
 function ListBooks() {
 const navigate = useNavigate();
   const [books, setBooks] = useState([]);
   const [flag,setFlag] = useState(false);
 
+  const getBooks = async () => {
+    const data = await showListBooks();
+    setBooks(data);
+  };
+
   useEffect(() => {
-    const getBooks = async () => {
-      const data = await showListBooks();
-      setBooks(data);
-    };
     getBooks();
   },[flag]);
 
