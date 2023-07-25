@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {Await, useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import showListBooks from "../service/showListBooks";
 import deleteBook from "../service/deleteBook";
 function ListBooks() {
@@ -20,9 +20,13 @@ navigate("/add")
 }
 
 const handelButondelete = async(id)=>{
-await deleteBook(id);
-setFlag(!flag);
-navigate("/")
+  const confirm = window.confirm("ban co muon xoa");
+  if(confirm){
+    await deleteBook(id);
+    await setFlag(!flag);
+    navigate("/")
+  }
+
 }
 
 const handelButonEdit =(id)=>{
