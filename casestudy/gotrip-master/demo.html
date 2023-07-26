@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    nums = [0, 1, 0, 3, 12]
+    let c=0 ;
+    for (const i in nums) {
+        if(nums[i]===0){
+            nums.splice(i,1);
+            c++;
+        }
+    }
+    for (let i = 0; i < c; i++) {
+        nums.push(0);
+    }
+    console.log(nums)
+
+</script>
+</body>
+</html>
