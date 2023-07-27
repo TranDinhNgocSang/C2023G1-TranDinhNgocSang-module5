@@ -1,4 +1,12 @@
+import { Route, Routes, Link, useNavigate, useParams } from "react-router-dom";
+
 function Navbar(){
+  const navigate = useNavigate();
+
+  const handelButtonHome = () => {
+    navigate("/");
+  };
+
     return(
 <header style={{background: 'rgb(250, 242, 236)'}}>
         <div className="header-area">
@@ -15,7 +23,7 @@ function Navbar(){
                     <div className="main-menu f-right d-none d-lg-block">
                       <nav>
                         <ul id="navigation">
-                          <li><a href="index.html" style={{fontSize: '22px', textDecoration: 'none'}}>Home</a>
+                          <li><a style={{fontSize: '22px', textDecoration: 'none'}} onClick={handelButtonHome}>Home</a>
                           </li>
                           <li><a href="about.html" style={{fontSize: '22px', textDecoration: 'none'}}>About
                               US</a></li>

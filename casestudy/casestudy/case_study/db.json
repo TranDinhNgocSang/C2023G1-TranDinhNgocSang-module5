@@ -1,0 +1,324 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "price": 1000,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "Villa 1",
+      "maxPeople": "20",
+      "area": 100,
+      "typeRental": {
+        "id": 3,
+        "nameTypeRental": "Month"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": 30,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "https://www.collinsdictionary.com/images/full/villa_107457074.jpg"
+    },
+    {
+      "id": 2,
+      "price": 800,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "Villa 2",
+      "maxPeople": "20",
+      "area": 100,
+      "typeRental": {
+        "id": 3,
+        "nameTypeRental": "Month"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": 30,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "https://lebarthvillas.com/uploads/uploads/posts/0ea09e9eaeccc616ae52ad518ef065bb.jpg"
+    },
+    {
+      "id": 3,
+      "price": 200,
+      "typeService": {
+        "id": 2,
+        "nameTypeService": "House"
+      },
+      "nameService": "House 1",
+      "maxPeople": "4",
+      "area": 50,
+      "typeRental": {
+        "id": 2,
+        "nameTypeRental": "Day"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": "",
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "https://www.thehousedesigners.com/images/uploads/SiteImage-Landing-modern-house-plans-1.webp"
+    },
+    {
+      "id": 4,
+      "price": 500,
+      "typeService": {
+        "id": 2,
+        "nameTypeService": "House"
+      },
+      "nameService": "House 2",
+      "maxPeople": "4",
+      "area": 50,
+      "typeRental": {
+        "id": 2,
+        "nameTypeRental": "Day"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": "",
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "https://www.mydomaine.com/thmb/CaWdFGvTH4-h1VvG6tukpKuU2lM=/3409x0/filters:no_upscale():strip_icc()/binary-4--583f06853df78c6f6a9e0b7a.jpeg"
+    },
+    {
+      "id": 5,
+      "price": 100,
+      "typeService": {
+        "id": 3,
+        "nameTypeService": "Room"
+      },
+      "nameService": "Room 1",
+      "maxPeople": "4",
+      "area": 50,
+      "typeRental": {
+        "id": 2,
+        "nameTypeRental": "Day"
+      },
+      "Standard": "",
+      "describe": "",
+      "poolArea": "",
+      "numberFloors": "",
+      "accompaniedService": "massage",
+      "image": "https://www.thespruce.com/thmb/iMt63n8NGCojUETr6-T8oj-5-ns=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/PAinteriors-7-cafe9c2bd6be4823b9345e591e4f367f.jpg"
+    },
+    {
+      "id": 6,
+      "price": 150,
+      "typeService": {
+        "id": 3,
+        "nameTypeService": "Room"
+      },
+      "nameService": "Room 2",
+      "maxPeople": "4",
+      "area": 50,
+      "typeRental": {
+        "id": 2,
+        "nameTypeRental": "Day"
+      },
+      "Standard": "",
+      "describe": "",
+      "poolArea": "",
+      "numberFloors": "",
+      "accompaniedService": "massage",
+      "image": "https://hips.hearstapps.com/hmg-prod/images/edc100122brockschmidt-web-001-1664480031.jpg"
+    },
+    {
+      "price": 4,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "ư",
+      "maxPeople": 2,
+      "area": 4,
+      "typeRental": {},
+      "Standard": "4",
+      "describe": "4",
+      "poolArea": 4,
+      "numberFloors": 4,
+      "accompaniedService": "",
+      "image": "4",
+      "id": 7
+    },
+    {
+      "price": 3,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "3",
+      "maxPeople": 3,
+      "area": 3,
+      "typeRental": {},
+      "Standard": "3",
+      "describe": "3",
+      "poolArea": 3,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "3",
+      "id": 8
+    },
+    {
+      "price": 3,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "3",
+      "maxPeople": 3,
+      "area": 3,
+      "typeRental": {},
+      "Standard": "3",
+      "describe": "3",
+      "poolArea": 3,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "3",
+      "id": 9
+    },
+    {
+      "price": 3,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "3",
+      "maxPeople": 3,
+      "area": 3,
+      "typeRental": {},
+      "Standard": "3",
+      "describe": "3",
+      "poolArea": 3,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "3",
+      "id": 10
+    },
+    {
+      "price": 3,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "3",
+      "maxPeople": 3,
+      "area": 3,
+      "typeRental": {},
+      "Standard": "3",
+      "describe": "3",
+      "poolArea": 3,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "3",
+      "id": 11
+    },
+    {
+      "price": 3,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "3",
+      "maxPeople": 3,
+      "area": 3,
+      "typeRental": {},
+      "Standard": "3",
+      "describe": "3",
+      "poolArea": 3,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "3",
+      "id": 12
+    },
+    {
+      "price": 3,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "3",
+      "maxPeople": 3,
+      "area": 3,
+      "typeRental": {},
+      "Standard": "3",
+      "describe": "3",
+      "poolArea": 3,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "3",
+      "id": 13
+    },
+    {
+      "price": 8,
+      "typeService": {
+        "id": 2,
+        "nameTypeService": "House"
+      },
+      "nameService": "8",
+      "maxPeople": 6,
+      "area": 8,
+      "typeRental": {},
+      "Standard": "8",
+      "describe": "8",
+      "poolArea": "",
+      "numberFloors": 8,
+      "accompaniedService": "",
+      "image": "8",
+      "id": 14
+    },
+    {
+      "price": 1,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "1",
+      "maxPeople": 1,
+      "area": 1,
+      "typeRental": {},
+      "Standard": "1",
+      "describe": "1",
+      "poolArea": 1,
+      "numberFloors": 1,
+      "accompaniedService": "",
+      "image": "1",
+      "id": 15
+    }
+  ],
+  "type-service": [
+    {
+      "id": 1,
+      "nameTypeService": "Villa"
+    },
+    {
+      "id": 2,
+      "nameTypeService": "House"
+    },
+    {
+      "id": 3,
+      "nameTypeService": "Room"
+    }
+  ],
+  "type-rental": [
+    {
+      "id": 1,
+      "nameTypeRental": "hour"
+    },
+    {
+      "id": 2,
+      "nameTypeRental": "Day"
+    },
+    {
+      "id": 3,
+      "nameTypeRental": "Month"
+    },
+    {
+      "id": 3,
+      "nameTypeRental": "Year"
+    }
+  ]
+}
