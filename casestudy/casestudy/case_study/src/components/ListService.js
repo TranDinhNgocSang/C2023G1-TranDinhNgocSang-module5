@@ -33,7 +33,7 @@ function ListService() {
       showCancelButton: true,
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
-      confirmButtonText: "DElete",
+      confirmButtonText: "Delete",
     }). then((result) => {
       if (result.isConfirmed) {
         deleteService(id).then(()=>{
@@ -43,6 +43,16 @@ function ListService() {
       }
     });
   };
+
+  const handelButtonEdit = (id,typeId) =>{
+    if (typeId == 1) {
+      navigate("/edit-villa/" + id);
+    } else if (typeId == 2) {
+      navigate("/edit-house/" + id);
+    } else if(typeId==3){
+      navigate("/edit-house/" + id);
+    }else{}
+  }
 
   return (
     <main>

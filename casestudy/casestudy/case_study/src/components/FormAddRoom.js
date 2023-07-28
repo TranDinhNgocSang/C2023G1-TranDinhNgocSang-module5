@@ -1,7 +1,17 @@
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Route, Routes, Link, useNavigate, useParams } from "react-router-dom";
+import * as yup from "yup";
+import { useEffect, useState } from "react";
+import {
+  showListTypeRental,
+  getTypeRentalById,
+} from "../service/type-rental/typeRental";
+import { addService } from "../service/service/serviceService";
+import Swal from "sweetalert2";
 
 function FormAddRoom() {
   const navigate = useNavigate();
+  const [typeRental, setTypeRental] = useState([]);
 
   const handelButtonAddHouse = () => {
     navigate("/add-house");
@@ -10,28 +20,42 @@ function FormAddRoom() {
   const handelButtonAddVilla = () => {
     navigate("/add-villa");
   };
+
+  const getListTypeRental = async () => {
+    const data = await showListTypeRental();
+    setTypeRental(data);
+  };
+
+  useEffect(() => {
+    getListTypeRental();
+  }, []);
+
+  if (!typeRental) {
+    return null;
+  }
+
   return (
     <div className="body">
       <div className="container rounded bg-white mt-5 mb-5">
-      <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button
-          type="button"
-          class="btn btn-outline-dark"
-          onClick={handelButtonAddVilla}
-        >
-          Villa
-        </button>
-        <button
-          type="button"
-          class="btn btn-outline-dark"
-          onClick={handelButtonAddHouse}
-        >
-          House
-        </button>
-        <button type="button" class="btn btn-warning">
-          Room
-        </button>
-      </div>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            onClick={handelButtonAddVilla}
+          >
+            Villa
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            onClick={handelButtonAddHouse}
+          >
+            House
+          </button>
+          <button type="button" class="btn btn-warning">
+            Room
+          </button>
+        </div>
         <div className="row">
           <div className="col-md-4 border-right">
             <div className="d-flex flex-column align-items-center text-center p-3 py-5">
@@ -47,65 +71,174 @@ function FormAddRoom() {
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <h2 className="text-right">service: Room</h2>
               </div>
-              <div className="row mt-2">
-                <div className="col-md-12">
-                  <label className="labels">Name Service</label>
-                  <input type="text" className="form-control" placeholder />
-                </div>
-              </div>
-              <div className="row mt-2">
-                <div className="col-md-6 pb-2">
-                  <label className="labels">Maximum number of people</label>
-                  <input type="number" className="form-control" />
-                </div>
-                <div className="col-md-6 pb-2">
-                  <label className="labels">Area</label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    placeholder="m2"
-                  />
-                </div>
-                <div className="col-md-6 pb-2">
-                  <label className="labels">Price</label>
-                  <input type="number" className="form-control" />
-                </div>
-                <div className="col-md-6 pb-2">
-                  <label className="labels">Accompanied service</label>
-                  <input type="text" className="form-control" />
-                </div>
-              </div>
-              <div className="row mt-3">
-                <div className="col-md-6">
-                  <label className="labels">image</label>
-                  <input type="file" className="form-control" />
-                </div>
-                <div className="col-md-3">
-                  <label className="labels">rental type</label>
-                  <select
-                    className="form-select"
-                    aria-label="Default select example"
-                  >
-                    <option value={1}>Year</option>
-                    <option value={2}>Month</option>
-                    <option value={3}>Day</option>
-                    <option value={4}>Hour</option>
-                  </select>
-                </div>
-              </div>
-              <div className="mt-5 text-center">
-                <button
-                  className="btn btn-primary profile-button"
-                  type="button"
-                >
-                  Submit
-                </button>
-              </div>
+              <Formik
+                initialValues={{
+                  price: "",
+                  typeService: "",
+                  nameService: "",
+                  maxPeople: "",
+                  area: "",
+                  typeRental: "",
+                  Standard: "",
+                  describe: "",
+                  poolArea: "",
+                  numberFloors: "",
+                  accompaniedService: "",
+                  image: "",
+                }}
+                validationSchema={yup.object({
+                  price: yup.number().required("price can't be empty"),
+                  //   typeService: yup.number(). ("type service can't be empty"),
+                  nameService: yup
+                    .string()
+                    .required("name Service can't be empty"),
+                  maxPeople: yup.number().required("max people can't be empty"),
+                  area: yup.number().required("area can't be empty"),
+                  typeRental: yup
+                    .number()
+                    .required("type rental can't be empty"),
+                  // Standard: yup.string().required("standard can't be empty"),
+                  // describe: yup.string().required("describe can't be empty"),
+                  // poolArea: yup.number().required("pool area can't be empty"),
+                  // numberFloors: yup
+                  //   .number()
+                  //   .required("pool area can't be empty"),
+                  accompaniedService: yup
+                    .string()
+                    .required("accompanied service can't be empty"),
+                  image: yup.string().required("describe can't be empty"),
+                  Standard: yup.string(),
+                })}
+                onSubmit={async (service) => {
+                  const typeRentalById = getTypeRentalById(service.typeRental);
+                  const newService = {
+                    ...service,
+                    typeService: {
+                      id: 3,
+                      nameTypeService: "Room",
+                    },
+                    typeRental: typeRentalById,
+                  };
+                  addService(newService).then(() => {
+                    navigate("/");
+                    Swal.fire({
+                      title: "successfully added new!",
+                      text: "",
+                      icon: "success",
+                      button: "Ok",
+                    });
+                  });
+                }}
+              >
+                <Form>
+                  <div className="row mt-2">
+                    <div className="col-md-12">
+                      <label className="labels">Name Service</label>
+                      <Field
+                        type="text"
+                        className="form-control"
+                        placeholder
+                        name="nameService"
+                      />
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="nameService" />
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row mt-2">
+                    <div className="col-md-6 pb-2">
+                      <label className="labels">Maximum number of people</label>
+                      <Field
+                        type="number"
+                        className="form-control"
+                        name="maxPeople"
+                      />
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="maxPeople" />
+                      </p>
+                    </div>
+                    <div className="col-md-6 pb-2">
+                      <label className="labels">Area</label>
+                      <Field
+                        type="number"
+                        className="form-control"
+                        placeholder="m2"
+                        name="area"
+                      />
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="area" />
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6 pb-2">
+                      <label className="labels">Price</label>
+                      <Field
+                        type="number"
+                        className="form-control"
+                        name="price"
+                      />
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="price" />
+                      </p>
+                    </div>
+                    <div className="col-md-6 pb-2">
+                      <label className="labels">Accompanied service</label>
+                      <Field
+                        type="text"
+                        className="form-control"
+                        name="accompaniedService"
+                      />
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="accompaniedService" />
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-6">
+                      <label className="labels">image</label>
+                      <Field
+                        type="text"
+                        className="form-control"
+                        name="image"
+                      />
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="image" />
+                      </p>
+                    </div>
+                    <div className="col-md-3">
+                      <label className="labels">rental type</label>
+                      <select
+                        className="form-select"
+                        aria-label="Default select example"
+                        name="typeRental"
+                      >
+                        <option value={""}>select</option>
+                        {typeRental.map((t) => {
+                          return (
+                            <option value={t.id}>{t.nameTypeRental}</option>
+                          );
+                        })}
+                      </select>
+                      <p style={{ color: "red" }}>
+                        <ErrorMessage name="typeRental" />
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-5 text-center">
+                    <button
+                      className="btn btn-primary profile-button"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </Form>
+              </Formik>
             </div>
           </div>
           <div className="d-flex flex-row align-items-center back">
             <i className="fa fa-long-arrow-left mr-1 mb-1" />
-            <h6>Back to home</h6>
           </div>
         </div>
       </div>

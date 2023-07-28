@@ -1,5 +1,7 @@
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
+import {getCovids} from "./service/CovidService"
+
 export default function Home({ dataList }) {
   return (
     <>
@@ -33,8 +35,7 @@ export default function Home({ dataList }) {
 }
 
 export async function getServerSideProps() {
-    const response = await axios.get('http://localhost:8080/covids');
-    const dataList = response.data;
+    const dataList = await getCovids();
     return {
       props: {
         dataList,

@@ -6,7 +6,7 @@ import {showListTypeRental,getTypeRentalById} from "../service/type-rental/typeR
 import { addService } from "../service/service/serviceService";
 import Swal from "sweetalert2";
 
-function FormAddHouse() {
+function FormEditHouse() {
   const navigate = useNavigate();
   const [typeRental, setTypeRental] = useState([]);
 
@@ -226,4 +226,4 @@ function FormAddHouse() {
   );
 }
 
-export default FormAddHouse;
+export default FormEditHouse;

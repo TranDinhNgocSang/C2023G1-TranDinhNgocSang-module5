@@ -9,7 +9,7 @@ import {
 import { addService } from "../service/service/serviceService";
 import Swal from "sweetalert2";
 
-function FormAddVilla() {
+function FormEditVilla() {
   const navigate = useNavigate();
 
   const [typeRental, setTypeRental] = useState([]);
@@ -99,9 +99,9 @@ function FormAddVilla() {
                     .required("name Service can't be empty"),
                   maxPeople: yup.number().required("max people can't be empty"),
                   area: yup.number().required("area can't be empty"),
-                    typeRental: yup
-                      .number()
-                      .required("type rental can't be empty"),
+                  //   typeRental: yup
+                  //     .number()
+                  //     .required("type rental can't be empty"),
                   Standard: yup.string().required("standard can't be empty"),
                   describe: yup.string().required("describe can't be empty"),
                   poolArea: yup.number().required("pool area can't be empty"),
@@ -125,15 +125,8 @@ function FormAddVilla() {
                     },
                     typeRental: typeRentalById,
                   };
-                  addService(newService).then(()=>{
-                    navigate("/");
-                    Swal.fire({
-                      title: "successfully added new!",
-                      text: "!",
-                      icon: "success",
-                      button: "Aww yiss!",
-                    });
-                  });
+                  addService(newService);
+                  navigate("/");
                 }}
               >
                 <Form>
@@ -240,8 +233,7 @@ function FormAddVilla() {
                         aria-label="Default select example"
                         name="typeRental"
                       >
-                        <option value=''>Select</option>
-                        {typeRental.length > 0 && typeRental.map((t) => {
+                        {typeRental.map((t) => {
                           return (
                             <option key={t.id} value={t.id}>
                               {t.nameTypeRental}
@@ -281,4 +273,4 @@ function FormAddVilla() {
     </div>
   );
 }
-export default FormAddVilla;
+export default FormEditVilla;
