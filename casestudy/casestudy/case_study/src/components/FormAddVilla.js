@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import {
   showListTypeRental,
   getTypeRentalById,
-} from "../service/type-rental/typeRental";
+} from "../service/service/typeRental";
 import { addService } from "../service/service/serviceService";
 import Swal from "sweetalert2";
 
@@ -116,7 +116,6 @@ function FormAddVilla() {
                   const typeRentalById = await getTypeRentalById(
                     service.typeRental
                   );
-                  console.log(service);
                   const newService = {
                     ...service,
                     typeService: {
@@ -241,7 +240,7 @@ function FormAddVilla() {
                         name="typeRental"
                       >
                         <option value=''>Select</option>
-                        {typeRental.length > 0 && typeRental.map((t) => {
+                        {typeRental.map((t) => {
                           return (
                             <option key={t.id} value={t.id}>
                               {t.nameTypeRental}

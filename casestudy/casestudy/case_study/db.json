@@ -29,7 +29,7 @@
         "nameTypeService": "Villa"
       },
       "nameService": "Villa 2",
-      "maxPeople": "20",
+      "maxPeople": 12,
       "area": 100,
       "typeRental": {
         "id": 3,
@@ -44,7 +44,7 @@
     },
     {
       "id": 3,
-      "price": 200,
+      "price": 150,
       "typeService": {
         "id": 2,
         "nameTypeService": "House"
@@ -65,18 +65,15 @@
     },
     {
       "id": 4,
-      "price": 500,
+      "price": 49,
       "typeService": {
         "id": 2,
         "nameTypeService": "House"
       },
       "nameService": "House 2",
-      "maxPeople": "4",
+      "maxPeople": 7,
       "area": 50,
-      "typeRental": {
-        "id": 2,
-        "nameTypeRental": "Day"
-      },
+      "typeRental": {},
       "Standard": "vip",
       "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
       "poolArea": "",
@@ -113,12 +110,9 @@
         "nameTypeService": "Room"
       },
       "nameService": "Room 2",
-      "maxPeople": "4",
+      "maxPeople": 10,
       "area": 50,
-      "typeRental": {
-        "id": 2,
-        "nameTypeRental": "Day"
-      },
+      "typeRental": {},
       "Standard": "",
       "describe": "",
       "poolArea": "",
@@ -127,58 +121,88 @@
       "image": "https://hips.hearstapps.com/hmg-prod/images/edc100122brockschmidt-web-001-1664480031.jpg"
     },
     {
-      "price": 4,
+      "price": 1000,
       "typeService": {
         "id": 1,
         "nameTypeService": "Villa"
       },
-      "nameService": "ư",
-      "maxPeople": 2,
-      "area": 4,
-      "typeRental": {},
-      "Standard": "4",
-      "describe": "4",
-      "poolArea": 4,
-      "numberFloors": 4,
+      "nameService": "Villa 1",
+      "maxPeople": 11,
+      "area": 100,
+      "typeRental": {
+        "id": 3,
+        "nameTypeRental": "Month"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": 30,
+      "numberFloors": 3,
       "accompaniedService": "",
-      "image": "4",
+      "image": "https://www.collinsdictionary.com/images/full/villa_107457074.jpg",
       "id": 7
     },
     {
-      "price": 3,
+      "price": 1000,
       "typeService": {
         "id": 1,
         "nameTypeService": "Villa"
       },
-      "nameService": "3",
-      "maxPeople": 3,
-      "area": 3,
-      "typeRental": {},
-      "Standard": "3",
-      "describe": "3",
-      "poolArea": 3,
+      "nameService": "Villa 1",
+      "maxPeople": 8,
+      "area": 100,
+      "typeRental": {
+        "id": 3,
+        "nameTypeRental": "Month"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": 30,
       "numberFloors": 3,
       "accompaniedService": "",
-      "image": "3",
+      "image": "https://www.collinsdictionary.com/images/full/villa_107457074.jpg",
       "id": 8
     },
     {
-      "price": 3,
+      "price": 800,
       "typeService": {
         "id": 1,
         "nameTypeService": "Villa"
       },
-      "nameService": "3",
-      "maxPeople": 3,
-      "area": 3,
-      "typeRental": {},
-      "Standard": "3",
-      "describe": "3",
-      "poolArea": 3,
+      "nameService": "Villa 2",
+      "maxPeople": 15,
+      "area": 100,
+      "typeRental": {
+        "id": 3,
+        "nameTypeRental": "Month"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": 30,
       "numberFloors": 3,
       "accompaniedService": "",
-      "image": "3",
+      "image": "https://lebarthvillas.com/uploads/uploads/posts/0ea09e9eaeccc616ae52ad518ef065bb.jpg",
       "id": 9
+    },
+    {
+      "id": 10,
+      "price": 800,
+      "typeService": {
+        "id": 1,
+        "nameTypeService": "Villa"
+      },
+      "nameService": "Villa 22eqwewqewq",
+      "maxPeople": "20",
+      "area": 100,
+      "typeRental": {
+        "id": 3,
+        "nameTypeRental": "Month"
+      },
+      "Standard": "vip",
+      "describe": "On the upper floor, a Master bedroom with a double bed and en-suite bathroom, and a 2nd bedroom with a double bed and a shower room share a 10 m² balcony overlooking the garden and the sea.  All is comfortable, with air conditioning, and decorated with care.",
+      "poolArea": 30,
+      "numberFloors": 3,
+      "accompaniedService": "",
+      "image": "https://lebarthvillas.com/uploads/uploads/posts/0ea09e9eaeccc616ae52ad518ef065bb.jpg"
     }
   ],
   "type-service": [
@@ -209,8 +233,244 @@
       "nameTypeRental": "Month"
     },
     {
-      "id": 3,
+      "id": 4,
       "nameTypeRental": "Year"
+    }
+  ],
+  "customers": [
+    {
+      "id": 2,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 3,
+        "nameType": "Gold"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Van b",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 4,
+      "name": "Nguyen Van bbaa",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 5,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 6,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 7,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 8,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 9,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 10,
+      "name": "Nguyen Van A",
+      "date_of_birth": "01/01/1990",
+      "gender": "Male",
+      "id_card": "123456789",
+      "phone_number": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "No.1 Street A, District 1, Ho Chi Minh City"
+    },
+    {
+      "id": 12,
+      "name": "Trần Đình Ngọc Quý",
+      "date_of_birth": "2023-07-07",
+      "gender": "Male",
+      "id_card": "1",
+      "phone_number": "0935325641",
+      "email": "sang@gmail.com",
+      "customer_type": {
+        "id": 2,
+        "nameType": "Platinium"
+      },
+      "address": "101 Phạm Văn Nghị, Quận Thanh Khê, TP. Đà Nẵng"
+    }
+  ],
+  "type-customer": [
+    {
+      "id": 1,
+      "nameType": "Diamond"
+    },
+    {
+      "id": 2,
+      "nameType": "Platinium"
+    },
+    {
+      "id": 3,
+      "nameType": "Gold"
+    },
+    {
+      "id": 4,
+      "nameType": "Silver"
+    },
+    {
+      "id": 5,
+      "nameType": "Member"
+    }
+  ],
+  "contracts": [
+    {
+      "contract_id": "001",
+      "check_in": "2023-08-01",
+      "check_out": "2023-08-05",
+      "deposit": 500,
+      "total": 2000
+    },
+    {
+      "id": "002",
+      "check_in": "2023-09-10",
+      "check_out": "2023-09-15",
+      "deposit": 800,
+      "total": 3200
+    },
+    {
+      "contracidt_id": "003",
+      "check_in": "2023-10-01",
+      "check_out": "2023-10-07",
+      "deposit": 600,
+      "total": 2400
+    },
+    {
+      "id": "004",
+      "check_in": "2023-11-15",
+      "check_out": "2023-11-20",
+      "deposit": 1000,
+      "total": 4000
+    },
+    {
+      "id": "005",
+      "check_in": "2024-01-02",
+      "check_out": "2024-01-05",
+      "deposit": 300,
+      "total": 1200
+    },
+    {
+      "id": "006",
+      "check_in": "2024-02-14",
+      "check_out": "2024-02-20",
+      "deposit": 800,
+      "total": 3200
+    },
+    {
+      "id": "007",
+      "check_in": "2024-03-05",
+      "check_out": "2024-03-10",
+      "deposit": 400,
+      "total": 1600
+    },
+    {
+      "id": "008",
+      "check_in": "2024-04-20",
+      "check_out": "2024-04-25",
+      "deposit": 900,
+      "total": 3600
+    },
+    {
+      "id": "009",
+      "check_in": "2024-05-15",
+      "check_out": "2024-05-20",
+      "deposit": 600,
+      "total": 2400
+    },
+    {
+      "id": "010",
+      "check_in": "2024-06-10",
+      "check_out": "2024-06-15",
+      "deposit": 700,
+      "total": 2800
     }
   ]
 }

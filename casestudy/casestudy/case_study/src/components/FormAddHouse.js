@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Route, Routes, Link, useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
 import { useEffect, useState } from "react";
-import {showListTypeRental,getTypeRentalById} from "../service/type-rental/typeRental";
+import {showListTypeRental,getTypeRentalById} from "../service/service/typeRental";
 import { addService } from "../service/service/serviceService";
 import Swal from "sweetalert2";
 

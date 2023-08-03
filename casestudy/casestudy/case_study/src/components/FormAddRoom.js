@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import {
   showListTypeRental,
   getTypeRentalById,
-} from "../service/type-rental/typeRental";
+} from "../service/service/typeRental";
 import { addService } from "../service/service/serviceService";
 import Swal from "sweetalert2";
 

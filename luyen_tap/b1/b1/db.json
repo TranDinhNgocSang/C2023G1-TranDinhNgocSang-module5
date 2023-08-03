@@ -1,0 +1,54 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Tran Dinh Ngoc Sang",
+      "dayOfBirth": "1998/01/20",
+      "gender" : "male",
+      "typeCustomer" :{
+        "id": 1,
+      "nameType": "vang"
+      }
+
+    },
+    {
+      "id": 2,
+      "name": "Tran Dinh Ngoc Sang",
+      "dayOfBirth": "1998/01/20",
+      "gender" : "male",
+      "typeCustomer" :{
+        "id": 1,
+      "nameType": "vang"
+      }
+
+
+    },
+    {
+      "id": 3,
+      "name": "Tran Dinh Ngoc Sang",
+      "dayOfBirth": "1998/01/20",
+      "gender" : "male",
+      "typeCustomer" :{
+        "id": 1,
+      "nameType": "vang"
+      }
+
+
+    }
+  ],
+  "type-customer": [
+    {
+      "id": 1,
+      "nameType": "vang"
+    },
+    {
+      "id": 2,
+      "nameType": "bac"
+    },
+    {
+      "id": 3,
+      "nameType": "dong"
+    }
+  ]
+
+}

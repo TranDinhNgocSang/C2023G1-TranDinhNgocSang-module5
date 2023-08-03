@@ -3,10 +3,6 @@ import { Route, Routes, Link, useNavigate, useParams } from "react-router-dom";
 function Navbar(){
   const navigate = useNavigate();
 
-  const handelButtonHome = () => {
-    navigate("/");
-  };
-
     return(
 <header style={{background: 'rgb(250, 242, 236)'}}>
         <div className="header-area">
@@ -23,24 +19,9 @@ function Navbar(){
                     <div className="main-menu f-right d-none d-lg-block">
                       <nav>
                         <ul id="navigation">
-                          <li><a style={{fontSize: '22px', textDecoration: 'none'}} onClick={handelButtonHome}>Home</a>
-                          </li>
-                          <li><a href="about.html" style={{fontSize: '22px', textDecoration: 'none'}}>About
-                              US</a></li>
-                          <li><a href="packages.html" style={{fontSize: '22px', textDecoration: 'none'}}>Package</a>
-                          </li>
-                          <li><a href="blog.html" style={{fontSize: '22px', textDecoration: 'none'}}>Blog</a>
-                            <ul className="submenu">
-                              <li><a href="blog.html">Blog</a></li>
-                              <li><a href="single-blog.html">Blog Details</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="/#" style={{fontSize: '22px', textDecoration: 'none'}}>Pages</a>
-                            <ul className="submenu">
-                              <li><a href="elements.html">Element</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="contact.html" style={{fontSize: '22px', textDecoration: 'none'}}>Contract</a>
+                          <li><Link to={"/"} style={{fontSize: '22px', textDecoration: 'none'}} >Service</Link></li>
+                          <li><Link to={"/customer"} style={{fontSize: '22px', textDecoration: 'none'}}>Customer</Link></li>
+                          <li><Link to={"/contract"} style={{fontSize: '22px', textDecoration: 'none'}} >Contract</Link>
                           </li>
                         </ul>
                       </nav>

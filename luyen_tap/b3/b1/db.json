@@ -1,0 +1,67 @@
+{
+  "music": [
+    {
+      "id": 1,
+      "tenBai": "Nơi này có anh",
+      "caSi": "Sơn Tùng",
+      "NhacSi": "Sơn tùng",
+      "thoiGian": "03:30",
+      "luotThich": 200,
+      "trangThai": "Lưu Trữ"
+    },
+    {
+      "id": 2,
+      "tenBai": "Khó vẽ nụ cười",
+      "caSi": "Đạt G",
+      "NhacSi": "Đạt G",
+      "thoiGian": "03:30",
+      "luotThich": 200,
+      "trangThai": "Lưu Trữ"
+    },
+    {
+      "id": 3,
+      "tenBai": "Hát thì thấm, đấm thì đau",
+      "caSi": "Đạt G",
+      "NhacSi": "Đạt G",
+      "thoiGian": "03:30",
+      "luotThich": 200,
+      "trangThai": "Công Khai"
+    },
+    {
+      "id": 4,
+      "tenBai": "see you",
+      "caSi": "Phin",
+      "NhacSi": "Phin",
+      "thoiGian": "04:30",
+      "luotThich": 0,
+      "trangThai": "Công Khai"
+    },
+    {
+      "id": 5,
+      "tenBai": "Anh là vô địch",
+      "caSi": "Phước Tài",
+      "NhacSi": "Phước Tài",
+      "thoiGian": "03:45",
+      "luotThich": 0,
+      "trangThai": "Lưu Trữ"
+    },
+    {
+      "id": 6,
+      "tenBai": "Váy cưới",
+      "caSi": "Ngọc Sang",
+      "NhacSi": "Ngọc Sang",
+      "thoiGian": "05:15",
+      "luotThich": 0,
+      "trangThai": "Lưu Trữ"
+    },
+    {
+      "id": 7,
+      "tenBai": "Anh khác hay em khác",
+      "caSi": "aa",
+      "NhacSi": "aaa",
+      "thoiGian": "04:30",
+      "luotThich": 0,
+      "trangThai": "Công Khai"
+    }
+  ]
+}

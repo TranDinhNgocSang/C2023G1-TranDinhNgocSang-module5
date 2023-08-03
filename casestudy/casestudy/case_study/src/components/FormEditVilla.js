@@ -1,18 +1,20 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as yup from "yup";
 import { useEffect, useState } from "react";
 import {
   showListTypeRental,
   getTypeRentalById,
-} from "../service/type-rental/typeRental";
-import { addService } from "../service/service/serviceService";
+} from "../service/service/typeRental";
+import { addService,editService,getServiceById} from "../service/service/serviceService";
 import Swal from "sweetalert2";
 
 function FormEditVilla() {
   const navigate = useNavigate();
+  const {id} = useParams();
 
   const [typeRental, setTypeRental] = useState([]);
+  const [service,setService] = useState();
 
   const handelButtonAddHouse = () => {
     navigate("/add-house");
@@ -27,13 +29,20 @@ function FormEditVilla() {
     setTypeRental(data);
   };
 
+  const getService = async ()=>{
+    const service = await getServiceById(id);
+    setService(service)
+  }
+
   useEffect(() => {
     getListTypeRental();
+    getService();
   }, []);
 
-  if (!typeRental) {
-    return null;
-  }
+
+    if(!service){
+      return null;
+    }
 
   return (
     <div className="body">
@@ -78,18 +87,19 @@ function FormEditVilla() {
               </div>
               <Formik
                 initialValues={{
-                  price: "",
-                  typeService: "",
-                  nameService: "",
-                  maxPeople: "",
-                  area: "",
-                  typeRental: "",
-                  Standard: "",
-                  describe: "",
-                  poolArea: "",
-                  numberFloors: "",
-                  accompaniedService: "",
-                  image: "",
+                  id : service.id,
+                  price: service.price,
+                  typeService: service.typeService,
+                  nameService: service.nameService,
+                  maxPeople: service.maxPeople,
+                  area: service.area,
+                  typeRental: service.typeRental.id,
+                  Standard: service.Standard,
+                  describe: service.describe,
+                  poolArea: service.poolArea,
+                  numberFloors: service.numberFloors,
+                  accompaniedService: service.accompaniedService,
+                  image: service.image,
                 }}
                 validationSchema={yup.object({
                   price: yup.number().required("price can't be empty"),
@@ -113,6 +123,7 @@ function FormEditVilla() {
                   Standard: yup.string(),
                 })}
                 onSubmit={async (service) => {
+                  console.log(service);
                   const typeRentalById = await getTypeRentalById(
                     service.typeRental
                   );
@@ -125,8 +136,16 @@ function FormEditVilla() {
                     },
                     typeRental: typeRentalById,
                   };
-                  addService(newService);
-                  navigate("/");
+                  editService(newService).then(()=>{
+                    navigate("/");
+                    Swal.fire({
+                      title: "successfully",
+                      text: "",
+                      icon: "success",
+                      button: "Ok",
+                    });
+                  });
+                  
                 }}
               >
                 <Form>
@@ -233,6 +252,7 @@ function FormEditVilla() {
                         aria-label="Default select example"
                         name="typeRental"
                       >
+                        <option value={""}>select</option>
                         {typeRental.map((t) => {
                           return (
                             <option key={t.id} value={t.id}>

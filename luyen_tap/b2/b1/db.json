@@ -1,0 +1,68 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "S1",
+      "dayOfBirth": "1998-01-20",
+      "gender": "male",
+      "typeCustomer": {
+        "id": 1,
+        "nameType": "vang"
+      }
+    },
+    {
+      "id": 2,
+      "name": "S2",
+      "dayOfBirth": "1998-01-20",
+      "gender": "male",
+      "typeCustomer": {
+        "id": 1,
+        "nameType": "vang"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Tran Dinh Ngoc Sang",
+      "dayOfBirth": "1998-01-20",
+      "gender": "male",
+      "typeCustomer": {
+        "id": 1,
+        "nameType": "vang"
+      }
+    },
+    {
+      "name": "ewqe",
+      "dayOfBirth": "2023-07-30",
+      "gender": "male",
+      "typeCustomer": {
+        "id": 2,
+        "nameType": "bac"
+      },
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Sang",
+      "dayOfBirth": "2023-07-30",
+      "gender": "female",
+      "typeCustomer": {
+        "id": 3,
+        "nameType": "dong"
+      }
+    }
+  ],
+  "type-customer": [
+    {
+      "id": 1,
+      "nameType": "vang"
+    },
+    {
+      "id": 2,
+      "nameType": "bac"
+    },
+    {
+      "id": 3,
+      "nameType": "dong"
+    }
+  ]
+}

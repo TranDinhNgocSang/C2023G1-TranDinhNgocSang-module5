@@ -45,12 +45,12 @@ function ListService() {
   };
 
   const handelButtonEdit = (id,typeId) =>{
-    if (typeId == 1) {
+    if (typeId === 1) {
       navigate("/edit-villa/" + id);
-    } else if (typeId == 2) {
+    } else if (typeId === 2) {
       navigate("/edit-house/" + id);
-    } else if(typeId==3){
-      navigate("/edit-house/" + id);
+    } else if(typeId===3){
+      navigate("/edit-room/" + id);
     }else{}
   }
 
@@ -96,7 +96,7 @@ function ListService() {
           <div className="row">
             {services.map((sv) => {
               return (
-                <div className="col-xl-4 col-lg-4 col-md-6">
+                <div className="col-xl-4 col-lg-4 col-md-6" key={sv.id}>
                   <div className="single-place mb-30">
                     <div className="place-img">
                       <img height="300px" src={sv.image} alt="" />
@@ -110,7 +110,7 @@ function ListService() {
                         <p>{sv.typeService.nameTypeService}</p>
                       </div>
                       <div className="place-cap-bottom">
-                        <button type="button" className="btn btn-primary">
+                        <button type="button" className="btn btn-primary" onClick={()=>handelButtonEdit(sv.id,sv.typeService.id)}>
                           Edit
                         </button>
                         <button
