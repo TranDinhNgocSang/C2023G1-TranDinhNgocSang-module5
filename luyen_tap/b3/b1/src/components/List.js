@@ -14,15 +14,19 @@ function List() {
   const navigate = useNavigate();
   const [flag, setFlag] = useState(false);
   const [detail, setDetail] = useState({});
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(" ");
   const [page, setPage] = useState(0);
-  const [pageSearch, setPageSearch] = useState(0);
   const [size, setSize] = useState(3);
+  const [obj,setObj] = useState()
 
+  
   const showList = async () => {
-    const data = await getListMusic(page, size);
-    setMusic(data);
+    const data = await searchMusicByName(search,page,size);
+    setObj(data)
+    setMusic(data.content);
   };
+
+  console.log(music);
 
   const handleChangeStatus = async (id, name) => {
     Swal.fire({
@@ -54,13 +58,8 @@ function List() {
   };
 
   const handleSearch = async () => {
-    if (search === "") {
-      await showList();
-      setPageSearch(0)
-    } else {
-      const data = await searchMusicByName(search,pageSearch,size);
+      const data = await searchMusicByName(" ",page,size);
       setMusic(data.content);
-    }
   };
 
   const handlePrevPage = () => {
@@ -69,17 +68,6 @@ function List() {
 
   const handleNextPage = () => {
     setPage(page + 1);
-  };
-
-  const handlePrevPageSearch = () => {
-    if(pageSearch>=1)
-    setPageSearch((pageSearch)=>pageSearch - 1);
-    handleSearch();
-  };
-
-  const handleNextPageSearch = async() => {
-  setPageSearch((pageSearch)=>pageSearch + 1);
-    handleSearch();
   };
 
   const handleDelete = async (id, name) => {
@@ -102,13 +90,17 @@ function List() {
 
   useEffect(() => {
     showList();
-  }, [flag, page, size]);
+  }, [flag, page]);
+
+  if(!obj){
+    return null;
+  }
 
   return (
     <>
       <h2 style={{ color: "white" }}>{detail.tenBai}</h2>
       <h3 style={{ color: "white" }}>{detail.caSi}</h3>
-      <h2>{pageSearch}</h2>
+      <h1>{search}</h1>
       <div className="body">
         <div className="container">
           <div className="table-responsive">
@@ -171,7 +163,7 @@ function List() {
                   {music.map((m, index) => {
                     return (
                       <tr key={m.id}>
-                        <td>{page * size + index + 1}</td>
+                      <td>{page * size + index + 1}</td>
                         <td onClick={() => handleClickDetail(m.id)}>
                           {m.tenBai}
                         </td>
@@ -195,30 +187,15 @@ function List() {
                 </tbody>
               </table>
               <div className="clearfix">
-                <div className="hint-text">
-                  Showing <b>5</b> out of <b>25</b> entries
-                </div>
                 <ul className="pagination">
-                  {(page !== 0 && search==="") && (
+                  {(page !== 0) && (
                     <li className="page-item disabled" onClick={handlePrevPage}>
                       <a href="/#">Previous</a>
                     </li>
                   )}
-                  {(search!=="" && pageSearch!==0) && (
-                     <li className="page-item">
-                     <a
-                       href="/#"
-                       className="page-link"
-                       onClick={handlePrevPageSearch}
-                       disabled={music.length < size}
-                     >
-                       PreviousSearch
-                     </a>
-                   </li>
-                  )}
-                  {search===""&&(<li>{page + 1}</li>)}
-                  {search!==""&&(<li>search{pageSearch + 1}</li>)}
-                  {(music.length !==0 && search ==="") && (
+
+                  <li>{page + 1}/{obj.totalPages}</li>
+                  {(music.length !==0) && (
                      <li className="page-item">
                      <a
                        href="/#"
@@ -227,18 +204,6 @@ function List() {
                        disabled={music.length < size}
                      >
                        Next
-                     </a>
-                   </li>
-                  )}
-                  {(search!=="" && music.length !==0) && (
-                     <li className="page-item">
-                     <a
-                       href="/#"
-                       className="page-link"
-                       onClick={handleNextPageSearch}
-                       disabled={music.length < size}
-                     >
-                       NextSearch
                      </a>
                    </li>
                   )}

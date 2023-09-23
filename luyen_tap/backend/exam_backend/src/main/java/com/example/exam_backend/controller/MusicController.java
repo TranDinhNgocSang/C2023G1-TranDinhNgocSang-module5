@@ -1,4 +1,4 @@
-package com.example.exam_backend.controller;
+    package com.example.exam_backend.controller;
 
 import com.example.exam_backend.model.Music;
 import com.example.exam_backend.service.IMusicService;
@@ -63,6 +63,9 @@ public class MusicController {
     @GetMapping("/search/{name}/{page}/{size}")
     public ResponseEntity<Page<Music>> search(@PathVariable String name,@PathVariable int page,@PathVariable int size) {
         Pageable pageable = PageRequest.of(page, size);
+        if(name.equals(" ")){
+            name="";
+        }
         return new ResponseEntity<>(musicService.searchMusicByName(name,pageable), HttpStatus.OK);
     }
 
